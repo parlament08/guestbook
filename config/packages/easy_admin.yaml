@@ -17,5 +17,13 @@ easy_admin:
                 fields:
                     - author
                     - { property: 'email', type: 'email' }
-                    - { property: 'createdAt', type: 'datetime' }
-                #sort: ['createdAt', 'ASC']
+                    - { property: 'createAt', type: 'datetime' }
+                sort: ['createAt', 'ASC']
+                filters: ['conference']
+            edit:
+                fields:
+                    - { property: 'conference' }
+                    - { property: 'createAt', type: datetime, type_options: { disabled: true } }
+                    - 'author'
+                    - { property: 'email', type: 'email' }
+                    - text
